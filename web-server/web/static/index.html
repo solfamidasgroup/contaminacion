@@ -1,0 +1,62 @@
+{% extends './layout.html' %}
+
+{% block title %} {{ "Contaminacion Madrid" }} {% endblock title %} 
+
+{% block header %}
+
+
+{% endblock header %}
+
+{% block body %}
+<div class="contt">
+<select id="mySelect" onchange="setCenter()">
+    <option value="-3.6449619562463034,40.40168059936033">Moratalaz</option>
+    <option value="-3.6761987560728127,40.45168278144652">Avenida de Ramon y Cajal</option>
+    <option value="-3.6562633869433534,40.45605946495249">Arturo Soria</option>
+    <option value="-3.6821460868480123,40.42156141616667">Escuelas aguirre</option>
+    <option value="-3.708722474166383,40.34529667620802">Villaverde alto</option>
+    <option value="-3.7319509478965665,40.39481170367441">Calle Farolillo</option>
+    <option value="-3.751799319906681,40.427498755086646">Casa Campo</option>
+    <option value="-3.579862755897389,40.475558685407606">Barajas</option>
+    <option value="-3.703339649738877,40.419073506885724">Plaza del carmen</option>
+    <option value="-3.7039555531365314,40.44680140003109">Cuatro Caminos</option>
+    <option value="-3.703512831213948,40.47719376378018">Barrio del pilar</option>
+    <option value="-3.645812943134879,40.385886454535324">Vallecas</option>
+    <option value="-3.6801361842686267,40.39577269381513">Mendez Álvaro</option>
+    <option value="-3.6913347375357617,40.44420437765109">Paseo de la Castellana</option>
+    <option value="-3.5993893265519334,40.36742642602681">Ensanche de vallecas</option>
+    <option value="-3.6837827935865914,40.41635532271863">Retiro</option>
+    <option value="-3.6896253016357257,40.46650382249919">Plaza Castilla</option>
+    <option value="-3.619418918190188,40.438809119961746">Urbanización embajada</option>
+    <option value="-3.7178447452229615,40.385439851509744">Plaza Elíptica</option>
+    <option value="-3.655976227087789,40.493605540097775">Sanchinarro</option>
+    <option value="-3.7785583651275165,40.52282292675321">El pardo</option>
+    <option value="-3.6058786625162527,40.46200032364473">Parque Juan Carlos I </option>
+    <option value="-3.694657195402038, 40.50097926776118">Tres Olivos  </option>
+  </select>
+
+  <div id = "ident"></div>
+  <div class="titulo"> Contaminación Comunidad de Madrid</div>
+</div>
+    <div class="container">
+        <div id="menu" class="lateral">
+            <p id="estacion_nombre"></p>
+            <select id="op" onchange="elegir()">
+                <option selected disabled hidden> seleccione opción</option>
+                <option value="24">Últimas 24 horas</option>
+                <option value="month">Último mes </option>
+                <option value="year">Último año</option>
+                <option value="model">Predicciones</option>
+              </select>
+            <div id="menudiv"></div>
+        </div>
+        <div class="mapContainer">
+            <div id="map" class="map"></div>
+            <div class="pie"> 
+                <footer>
+                    <p>&copy; 2022 producto desarrollado por Solfamidas</p>
+                  </footer>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

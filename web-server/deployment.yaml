@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+  labels:
+    app: web
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+
+  template:
+    metadata:
+      name: web-pod-template
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-proxy-config-volume
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+            - name: static-volume
+              mountPath: /static
+
+        - name: app
+          image: eriklomao/web
+      # this container runs before the pod is deployed and moves
+      # the static file to the static volume.
+      initContainers:
+        - name: populate-volume
+          image: eriklomao/web
+          command: ["/bin/sh"]
+          args: ["-c", "cp -r /app/web/static/* /static/"]
+          volumeMounts:
+            - name: static-volume
+              mountPath: /static
+
+
+      volumes:
+      - name: nginx-proxy-config-volume
+        configMap:
+          name: web-nginx-conf
+      - name: static-volume
+        emptyDir: {}

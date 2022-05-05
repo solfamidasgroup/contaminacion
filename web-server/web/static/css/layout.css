@@ -1,0 +1,108 @@
+
+
+body{
+    background: url(https://www.brainpickings.org/wp-content/themes/brainpickings/images/bckgd_body.png);
+}
+.titulo{
+    position: relative;
+    font-size: 30px;
+    font-weight: 700;
+    top: 16px;
+    margin-left: 18%;
+}
+
+.opciones{
+    display:flex;
+    flex-direction: column;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fel-fondo-azul-claro-suave-del-extracto-modelo-de-la-textura-color-puede-ser-uso-como-p%25C3%25A1gina-cubierta-folleto-protector-pantalla-100772507.jpg&f=1&nofb=1');
+}
+
+.container{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+h3{
+    
+    cursor: pointer;
+}
+
+.map {
+    height: 899px;
+    width: 100%;
+}
+
+.lateral{
+    width: 50%;
+    border: 2px solid black; 
+    display: none;
+    border-radius: 1%;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 2%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: aliceblue;
+}
+
+.mapContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.pie{
+    width: 100%;
+    border: 1px solid black;
+    background-color: white;
+    font-size: larger;
+}
+
+p{
+    text-align: center;
+}
+#mySelect {
+    width: 18%;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 30px;
+    
+ }
+ .contt{
+     display: flex;
+     flex-direction: row;
+     background-color: white;
+     
+ }
+
+ #ident{
+    width: 19%;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 30px;
+    font-family: 'EntezareZohoor2';
+ }
+ iframe{
+     border: 3ppx solid black;
+     margin-top: 5%;
+ }
+ .tituloGrafico{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: underline;
+ }
+ .op{
+    position: relative;
+    left: 20%;
+    width: 15%;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 30px;
+ }
+    
